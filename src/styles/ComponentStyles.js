@@ -103,7 +103,7 @@ const Q1HealthHome1 = styled("div")({
     left: `0px`,
     top: `234px`,
   });
-  
+ 
   const Registration = styled("div")({
     textAlign: `left`,
     whiteSpace: `pre-wrap`,
@@ -511,8 +511,9 @@ const Q1HealthHome1 = styled("div")({
     top: `343px`,
   });
 
-  export default {
+  export {
     Q1HealthHome1,
+    Age,
     Vector3,
     Vector1,
     Frame1,
@@ -543,7 +544,6 @@ const Q1HealthHome1 = styled("div")({
     Line1,
     Line2,
     DesiredWeight,
-    Age,
     CurrentWeight,
     CalculateYourDailyCa,
     Line11,
