@@ -54,7 +54,7 @@ const HomePage = () => {
     <>
     
     <Btn>
-      <button>hola</button>
+      
         <StartLosingWeight>
           {`Start losing weight NOW`}
         </StartLosingWeight>

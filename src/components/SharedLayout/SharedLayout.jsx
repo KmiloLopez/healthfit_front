@@ -87,8 +87,8 @@ const SharedLayout = () => {
          {/* TODO: IF THE ADDRESS IS "/" DISPLAY NORMAL*/}
       
          
-    </Q1HealthHome1>
     <Outlet/>
+    </Q1HealthHome1>
     </>
     
     )

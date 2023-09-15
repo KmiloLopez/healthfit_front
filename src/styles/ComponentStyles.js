@@ -1,9 +1,29 @@
 import {
-    styled
+    styled,
   } from '@mui/material/styles';
 
 import StrawberryBigPngImage from "../assets/images/Strawberry.png";
 
+
+
+const LabelsOne = styled("label")({
+  backgroundColor: `rgba(255, 255, 255, 1)`,
+  display: `flex`,
+  position: `relative`,
+  isolation: `isolate`,
+  flexDirection: `row`,
+  width: `1280px`,
+  height: `850px`,
+  justifyContent: `flex-start`,
+  alignItems: `flex-start`,
+  padding: `0px`,
+  boxSizing: `border-box`,
+  
+})
+const Inputboxes = styled("input")({
+  border:`none`
+  
+})
 const Q1HealthHome1 = styled("div")({
     backgroundColor: `rgba(255, 255, 255, 1)`,
     display: `flex`,
@@ -88,37 +108,33 @@ const Q1HealthHome1 = styled("div")({
   });
   
   const LogIn = styled("div")({
-    textAlign: `left`,
-    whiteSpace: `pre-wrap`,
-    fontSynthesis: `none`,
+   
     color: `rgba(155, 159, 170, 1)`,
     fontStyle: `normal`,
     fontFamily: `Verdana`,
     fontWeight: `700`,
     fontSize: `14px`,
     letterSpacing: `0.56px`,
-    textDecoration: `none`,
+    
     textTransform: `uppercase`,
-    position: `absolute`,
-    left: `0px`,
-    top: `234px`,
+    
+    marginTop:234,
+    
   });
  
   const Registration = styled("div")({
-    textAlign: `left`,
-    whiteSpace: `pre-wrap`,
-    fontSynthesis: `none`,
+    
     color: `rgba(155, 159, 170, 1)`,
     fontStyle: `normal`,
     fontFamily: `Verdana`,
     fontWeight: `700`,
     fontSize: `14px`,
     letterSpacing: `0.56px`,
-    textDecoration: `none`,
+    
     textTransform: `uppercase`,
-    position: `absolute`,
-    left: `84px`,
-    top: `234px`,
+    marginTop:234,
+    marginLeft:14,
+   
   });
   
   const Layer9 = styled("img")({
@@ -130,24 +146,92 @@ const Q1HealthHome1 = styled("div")({
     top: `0px`,
   });
   
-  const Btn = styled("div")({
+  const Btn = styled("button")({
     backgroundColor: `rgba(252, 132, 45, 1)`,
     boxShadow: `0px 4px 10px rgba(252, 132, 45, 0.5)`,
     borderRadius: `30px`,
     display: `flex`,
-    position: `absolute`,
-    isolation: `isolate`,
+    marginTop:`60px`,
     flexDirection: `row`,
-    justifyContent: `flex-start`,
-    alignItems: `flex-start`,
-    padding: `0px`,
+    justifyContent: `center`,
+    alignItems: `center`,
     boxSizing: `border-box`,
-    width: `210px`,
-    height: `43px`,
-    left: `339px`,
-    top: `696px`,
+    width: `182px`,
+    height: `44px`,
   });
+
+  const NoMainBtn = styled("button")({
+    borderRadius: `30px`,
+    display: `flex`,
+    marginTop:`60px`,
+    border:`2px solid #FC842D`,
+    flexDirection: `row`,
+    justifyContent: `center`,
+    alignItems: `center`,
+   
+    boxSizing: `border-box`,
+    width: `182px`,
+    height: `44px`,
+    '@media (max-width: 599px)': {
+      marginTop:`0px`,
+      // Estilos para pantallas pequeñas (<=599px)
+   },
+'@media (min-width: 600px) and (max-width: 1023px)': {
+    
+      // Estilos para pantallas medianas (600px <= width <= 1023px) Agregar solo si cambia
+   },
+    
+    
+  });
+  const BtnLoginContent =styled("div")({
+    textAlign: `center`,
+    whiteSpace: `pre-wrap`,
+    fontSynthesis: `none`,
+    color: `rgba(255, 255, 255, 1)`,
+    fontStyle: `normal`,
+    fontFamily: `Verdana`,
+    fontWeight: `700`,
+    fontSize: `14px`,
+    letterSpacing: `0.56px`,
   
+  })
+  const NoMainBtnContent =styled("div")({
+    textAlign: `center`,
+    whiteSpace: `pre-wrap`,
+    fontSynthesis: `none`,
+    color: `#FC842D`,
+    fontStyle: `normal`,
+    fontFamily: `Verdana`,
+    fontWeight: `700`,
+    fontSize: `14px`,
+    letterSpacing: `0.56px`,
+  
+  })
+  const LogInRegistrationTittle = styled("div")({
+    marginTop:40,
+    marginBottom:15,
+    textAlign: `left`,
+    whiteSpace: `pre-wrap`,
+    color: `#FC842D`,
+    
+    fontFamily: `fleur, sans-serif`,
+    fontStyle:"normal",
+    fontWeight:"400",
+    
+    fontSize: `14px`,
+    letterSpacing: `0.56px`,
+    '@media (max-width: 599px)': {
+      width:"100%",
+      display:"flex",
+      justifyContent:"center",
+      alignItems:"center",
+      // Estilos para pantallas pequeñas (<=599px)
+   },
+'@media (min-width: 600px) and (max-width: 1023px)': {
+    
+      // Estilos para pantallas medianas (600px <= width <= 1023px) Agregar solo si cambia
+   },
+  })
   const StartLosingWeight = styled("div")({
     textAlign: `center`,
     whiteSpace: `pre-wrap`,
@@ -176,7 +260,7 @@ const Q1HealthHome1 = styled("div")({
     boxSizing: `border-box`,
     width: `167px`,
     height: `66px`,
-    left: `16px`,
+    left: `20px`,
     top: `80px`,
   });
   
@@ -388,6 +472,23 @@ const Q1HealthHome1 = styled("div")({
     left: `0px`,
     top: `0px`,
   });
+  const FormLabels = styled("label")({
+    display:"flex",
+    flexDirection:"column",
+    textAlign: `left`,
+    marginBottom:20,
+    marginTop:40,
+    color: `rgba(155, 159, 170, 1)`,
+    
+    fontFamily: `Verdana`,
+    
+    fontSize: `14px`,
+    letterSpacing: `0.56px`,
+    width: `240px`,
+    height: `16px`,
+    
+  });
+
   
   const Line1 = styled("div")({
     border: `1px solid rgba(224, 224, 224, 1)`,
@@ -405,6 +506,12 @@ const Q1HealthHome1 = styled("div")({
     position: `absolute`,
     left: `270px`,
     top: `266px`,
+  });
+  const FormLines = styled("div")({
+    border: `1px solid rgba(224, 224, 224, 1)`,
+    width: `240px`,
+    height: `0px`,
+    
   });
   
   const DesiredWeight = styled("div")({
@@ -501,6 +608,60 @@ const Q1HealthHome1 = styled("div")({
     left: `0px`,
     top: `266px`,
   });
+  const FormContainer = styled("form")({
+    display: "flex",
+    flexDirection: "column",
+   
+    padding: 15,
+    width: 600,
+    position: `absolute`,
+    isolation: `isolate`,
+    top: `200px`,
+
+    '@media (max-width: 599px)': {
+      display: "flex",
+      flexDirection: "column",
+      
+      
+      position: `absolute`,
+      isolation: `isolate`,
+      top: `200px`,
+      left:20,
+       // Estilos para pantallas pequeñas (<=599px)
+    },
+    
+    '@media (min-width: 600px) and (max-width: 1023px)': {
+      
+      display: "flex",
+      flexDirection: "column",
+      padding: 15,
+     
+      position: `absolute`,
+      isolation: `isolate`,
+      top: `200px`,
+       // Estilos para pantallas medianas (600px <= width <= 1023px)
+    },
+    
+   
+    
+  })
+  const ButtonsContainer = styled("div")({
+    display: "flex",
+    gap: 32,
+    '@media (max-width: 599px)': {
+      
+      display: "flex",
+      flexDirection:"column",
+      gap: 20,
+      // Estilos para pantallas pequeñas (<=599px)
+   },
+'@media (min-width: 600px) and (max-width: 1023px)': {
+  
+      // Estilos para pantallas medianas (600px <= width <= 1023px)
+   },
+    
+  })
+  
   
   const Line4 = styled("div")({
     border: `1px solid rgba(224, 224, 224, 1)`,
@@ -510,6 +671,7 @@ const Q1HealthHome1 = styled("div")({
     left: `0px`,
     top: `343px`,
   });
+  /* Media query para dispositivos con un ancho máximo de 600px */
 
   export {
     Q1HealthHome1,
@@ -549,5 +711,14 @@ const Q1HealthHome1 = styled("div")({
     Line11,
     Line3,
     Line4,
-    BloodType
+    BloodType,
+    BtnLoginContent,
+    NoMainBtn,
+    NoMainBtnContent,
+    LogInRegistrationTittle,
+    FormLabels,
+    FormLines,
+    FormContainer,
+    Inputboxes,
+    ButtonsContainer
   };
