@@ -24,19 +24,28 @@ const Inputboxes = styled("input")({
   border:`none`
   
 })
-const Q1HealthHome1 = styled("div")({
-    backgroundColor: `rgba(255, 255, 255, 1)`,
-    display: `flex`,
-    position: `relative`,
-    isolation: `isolate`,
-    flexDirection: `row`,
-    width: `1280px`,
-    height: `850px`,
-    justifyContent: `flex-start`,
-    alignItems: `flex-start`,
-    padding: `0px`,
-    boxSizing: `border-box`,
-    overflow: `hidden`,
+const TotalNavContainer = styled("div")({
+  display: `flex`,
+  
+  flexDirection: `row`,
+  
+  justifyContent: `space-between`,
+  alignItems:`baseline`,
+  
+  width:`100%`,
+  height:`100%`,
+  
+    
+    '@media (max-width: 599px)': {
+     
+     
+      // Estilos para pantallas pequeñas (<=599px)
+      
+   },
+'@media (min-width: 600px) and (max-width: 1023px)': {
+    
+      // Estilos para pantallas medianas (600px <= width <= 1023px) Agregar solo si cambia
+   },
   });
   
   const Vector3 = styled("img")({
@@ -57,17 +66,8 @@ const Q1HealthHome1 = styled("div")({
   
   const Frame1 = styled("div")({
     display: `flex`,
-    position: `absolute`,
-    isolation: `isolate`,
-    flexDirection: `row`,
-    justifyContent: `flex-start`,
-    alignItems: `flex-start`,
-    padding: `0px`,
-    boxSizing: `border-box`,
-    width: `980px`,
-    height: `820px`,
-    left: `300px`,
-    top: `0px`,
+    marginRight:`20px`,
+    height:`100px`
   });
   
   const Group4 = styled("div")({
@@ -208,10 +208,8 @@ const Q1HealthHome1 = styled("div")({
   
   })
   const LogInRegistrationTittle = styled("div")({
-    marginTop:40,
+    marginTop:100,
     marginBottom:15,
-    textAlign: `left`,
-    whiteSpace: `pre-wrap`,
     color: `#FC842D`,
     
     fontFamily: `fleur, sans-serif`,
@@ -221,11 +219,12 @@ const Q1HealthHome1 = styled("div")({
     fontSize: `14px`,
     letterSpacing: `0.56px`,
     '@media (max-width: 599px)': {
+      // Estilos para pantallas pequeñas (<=599px)
       width:"100%",
       display:"flex",
       justifyContent:"center",
       alignItems:"center",
-      // Estilos para pantallas pequeñas (<=599px)
+      
    },
 '@media (min-width: 600px) and (max-width: 1023px)': {
     
@@ -250,43 +249,49 @@ const Q1HealthHome1 = styled("div")({
   });
   
   const Logo = styled("div")({
-    display: `flex`,
-    position: `absolute`,
-    isolation: `isolate`,
+    
+   
     flexDirection: `row`,
-    justifyContent: `flex-start`,
-    alignItems: `flex-start`,
-    padding: `0px`,
-    boxSizing: `border-box`,
-    width: `167px`,
-    height: `66px`,
-    left: `20px`,
-    top: `80px`,
+   
+    '@media (max-width: 599px)': {
+      // Estilos para pantallas pequeñas (<=599px)
+      
+   },
+'@media (min-width: 600px) and (max-width: 1023px)': {
+      // Estilos para pantallas medianas (600px <= width <= 1023px) Agregar solo si cambia
+   },
+    
+    
   });
   
   const LogoPng1 = styled("img")({
-    height: `66px`,
-    width: `70.25px`,
-    objectFit: `cover`,
-    position: `absolute`,
-    left: `0px`,
-    top: `0px`,
+   diplay:`flex`,
+   width:`46px`
+   
   });
   
   const SlimMom = styled("img")({
-    height: `16.27px`,
-    width: `48.18px`,
-    position: `absolute`,
-    left: `60px`,
-    top: `47px`,
+   
+  
+    '@media (max-width: 599px)': {
+      // Estilos para pantallas pequeñas (<=599px)
+      display:`none`,
+   },
+'@media (min-width: 600px) and (max-width: 1023px)': {
+      // Estilos para pantallas medianas (600px <= width <= 1023px) Agregar solo si cambia
+   },
   });
   
   const SlimMom1 = styled("img")({
-    height: `15.67px`,
-    width: `53.6px`,
-    position: `absolute`,
-    left: `113px`,
-    top: `47px`,
+    
+  
+    '@media (max-width: 599px)': {
+      // Estilos para pantallas pequeñas (<=599px)
+      display:`none`,
+   },
+'@media (min-width: 600px) and (max-width: 1023px)': {
+      // Estilos para pantallas medianas (600px <= width <= 1023px) Agregar solo si cambia
+   },
   });
   
   const Group44 = styled("div")({
@@ -612,21 +617,22 @@ const Q1HealthHome1 = styled("div")({
     display: "flex",
     flexDirection: "column",
    
-    padding: 15,
-    width: 600,
+    
+    width: `100%`,
     position: `absolute`,
     isolation: `isolate`,
-    top: `200px`,
-
+    top: `260px`,
+    left:20,
     '@media (max-width: 599px)': {
       display: "flex",
       flexDirection: "column",
-      
+      justifyContent:"center",
+      alignItems:"center",
       
       position: `absolute`,
       isolation: `isolate`,
       top: `200px`,
-      left:20,
+      
        // Estilos para pantallas pequeñas (<=599px)
     },
     
@@ -674,7 +680,7 @@ const Q1HealthHome1 = styled("div")({
   /* Media query para dispositivos con un ancho máximo de 600px */
 
   export {
-    Q1HealthHome1,
+    TotalNavContainer,
     Age,
     Vector3,
     Vector1,

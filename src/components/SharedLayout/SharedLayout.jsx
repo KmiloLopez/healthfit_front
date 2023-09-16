@@ -17,7 +17,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 import {
    Age,
-  Q1HealthHome1,
+   TotalNavContainer,
   Vector3,
   Vector1,
   Frame1,
@@ -60,35 +60,31 @@ import {
 
 const SharedLayout = () => {
   return (<>
-    <Q1HealthHome1>
-        <Vector3 src={Vector3Image} loading='lazy' alt={"Vector 3"}/>
-      <Vector1 src={Vector1Image} loading='lazy' alt={"Vector 1"}/>
+    <TotalNavContainer>
+    <Logo>
+        <LogoPng1 src={LogoPng1Image} loading='lazy' alt={"logo-png 1"}/>
+        <SlimMom src={SlimMomImage} loading='lazy' alt={"SlimMom"}/>
+        <SlimMom1 src={SlimMom1Image} loading='lazy' alt={"SlimMom"}/>
+      </Logo>
       <Frame1>
-        <Group4>
-          <StrawberryBigPng>
-          </StrawberryBigPng>
-          <Layer41 src={Layer41Image} loading='lazy' alt={"Layer-4 1"}/>
+
           <LogIn>
           <NavLink to= '/login'>Login</NavLink>
           </LogIn>
           <Registration>
             <NavLink to= '/Registration'>Registration</NavLink>
           </Registration>
-      
-          <Layer9 src={Layer9Image} loading='lazy' alt={"Layer-9"}/>
-        </Group4>
-       
+
       </Frame1>
-      <Logo>
-        <LogoPng1 src={LogoPng1Image} loading='lazy' alt={"logo-png 1"}/>
-        <SlimMom src={SlimMomImage} loading='lazy' alt={"SlimMom"}/>
-        <SlimMom1 src={SlimMom1Image} loading='lazy' alt={"SlimMom"}/>
-      </Logo>
+        
+      
+      
          {/* TODO: IF THE ADDRESS IS "/" DISPLAY NORMAL*/}
       
          
+    
+    </TotalNavContainer>
     <Outlet/>
-    </Q1HealthHome1>
     </>
     
     )
