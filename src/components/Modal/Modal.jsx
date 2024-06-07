@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, CloseBtn } from '../../components/Buttons';
 import IconBack from '../../assets/images/arrow-mobile.png';
@@ -29,6 +29,7 @@ export const Modal = ({
       closeModalHandle();
     }
   };
+
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -39,11 +40,19 @@ export const Modal = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    console.log('Datos recibidos en el modal:', {
+      userDailyCalorieIntake,
+      userNotRecommendedProducts,
+    });
+  }, [userDailyCalorieIntake, userNotRecommendedProducts]);
+
   const onClickOvrlHandle = event => {
     if (event.target.id === 'modal-overlay') {
       closeModalHandle();
     }
   };
+
   const onBtnClickHandle = () => {
     closeModalHandle();
     navigate('/register', { replace: true });
