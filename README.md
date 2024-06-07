@@ -1,5 +1,11 @@
-# Proyecto Final de GOIT ( TEAM-1 ) 
+    Proyecto final GOIT 
 
-ESTE PROYECTO FINAL SE REALIZA UTILIZANDO EL FRAMEWORK DE REACT Y NODE JS. 
-CONSISTE EN CALCULAR LAS CALORIAS QUE CONSUME UN USUARIO POR DÍA Y LLEVAR UN HISTÓRICO DE LA INGESTA DE ALIMENTOS PARA EL CONTROL DE PESO. 
+    Este el proyecto final de GOIT donde se aplica lo aprendido en React y Node Js. 
+
+    Backend: https://github.com/chvg1968/healthfit_back
+
+   Remote Backend: https://healthfitback-edf77344271d.herokuapp.com/
+   Swagger local: http://localhost:9000/api-docs/
+   
+
 
