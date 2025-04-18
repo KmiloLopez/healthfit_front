@@ -5,9 +5,14 @@ import { Thumb, ProdThumb, List, Title, AltText } from './SideBar.styles';
 import { useTranslation } from 'react-i18next';
 
 export const SideBar = ({ date, kcalConsumed, calorie }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language; 
   console.log('Sidebar loaded');
   const notRecommendedProd = useSelector(authSelectors.getUserNotRecommendProd);
+
+  console.log('notRecommendedProd:', notRecommendedProd); 
+  console.log('Current language SideBar:', lang);
+// Inspecciona el contenido
 
   return (
     <Thumb>
@@ -19,13 +24,12 @@ export const SideBar = ({ date, kcalConsumed, calorie }) => {
 
       <ProdThumb>
         <Title>{t('recommendedFoods')}</Title>
-        <h2>no recomends</h2>
-        {notRecommendedProd.length > 0 ? (
+        {notRecommendedProd && notRecommendedProd.length > 0 ? (
           <List>
-            {notRecommendedProd?.map((product, i) => (
-              <li key={i}>{product}</li>
-            ))}
-          </List>
+          {notRecommendedProd.map((product, i) => (
+            <li key={i}>{lang === 'en' ? product.en : product.es}</li>
+          ))}
+        </List>
         ) : (
           <AltText>{t('noRecoTittle')}</AltText>
         )}

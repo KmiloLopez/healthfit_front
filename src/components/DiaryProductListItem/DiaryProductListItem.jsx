@@ -1,14 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { GrClose } from 'react-icons/gr';
-
-import {
-  diaryPerDayOperation,
-  diarySelectors,
-} from '../../redux/app/diaryPerDay';
+import { diaryPerDayOperation, diarySelectors } from '../../redux/app/diaryPerDay';
 import { useTranslation } from 'react-i18next';
 import { ChoiceModal } from '../../components/ChoiceModal';
-
 import {
   BtnClose,
   Product,
@@ -19,24 +14,21 @@ import {
   ProductWeight,
 } from './DiaryProductListItem.styled';
 import { ReactPortal } from '../../components/ReactPortal';
-import { useRef } from 'react';
-import { useLayoutEffect } from 'react';
+import PropTypes from 'prop-types';
 
-export const DiaryProductListItem = ({ product, langCodes }) => {
-  const { t } = useTranslation();
-
+export const DiaryProductListItem = ({ product }) => {
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const textThumbRef = useRef();
   const textRef = useRef();
-
   const { weightGrm, _id } = product;
   const [showModal, setShowModal] = useState(false);
   const date = useSelector(diarySelectors.getCurrentDate);
   const currentDate = new Date().toLocaleDateString();
   const isCurrentDay = date === currentDate;
-  const isLoadingDeletedProd = useSelector(
-    diarySelectors.getIsDeleteProductLoading,
-  );
+  const isLoadingDeletedProd = useSelector(diarySelectors.getIsDeleteProductLoading);
+
+  const lang = i18n.language; // Obtener el idioma actual
 
   useLayoutEffect(() => {
     const textThumbWidth = textThumbRef.current.clientWidth;
@@ -48,6 +40,16 @@ export const DiaryProductListItem = ({ product, langCodes }) => {
       textRef.current.classList.remove('animate');
     }
   });
+
+  const getProductTitle = () => {
+    if (product.product && product.product.title) {
+      return product.product.title[lang] || product.product.title.en || product.product.title.es || t('unknownProduct');
+    }
+    return product.title || t('unknownProduct');
+  };
+
+  const productTitle = getProductTitle();
+  const productCalories = product.product ? product.product.calories : 'cal';
 
   const payload = {
     productId: _id,
@@ -65,17 +67,16 @@ export const DiaryProductListItem = ({ product, langCodes }) => {
     }
     setShowModal(false);
   };
-  const productName =
-    langCodes === 'es' ? product.product.title.es : product.product.title.en;
+
   return (
     <>
       <Product>
         <ProductInfo>
           <ProductNameThumb ref={textThumbRef}>
-            <ProductName ref={textRef}>{productName}</ProductName>
+            <ProductName ref={textRef}>{productTitle}</ProductName>
           </ProductNameThumb>
           <ProductWeight>{weightGrm} g</ProductWeight>
-          <ProductCalories>{product.product.calories} cal</ProductCalories>
+          <ProductCalories>{productCalories} cal</ProductCalories>
         </ProductInfo>
 
         {isCurrentDay && (
@@ -94,10 +95,26 @@ export const DiaryProductListItem = ({ product, langCodes }) => {
           <ChoiceModal
             text={t('deleteOr')}
             choiceHandler={choiceHandler}
-            subText={product}
+            subText={productTitle}
           />
         </ReactPortal>
       )}
     </>
   );
+};
+
+DiaryProductListItem.propTypes = {
+  product: PropTypes.shape({
+    product: PropTypes.shape({
+      _id: PropTypes.string,
+      title: PropTypes.shape({
+        en: PropTypes.string,
+        es: PropTypes.string,
+      }),
+      calories: PropTypes.number,
+    }),
+    weightGrm: PropTypes.number.isRequired,
+    _id: PropTypes.string.isRequired,
+    title: PropTypes.string,
+  }).isRequired,
 };
